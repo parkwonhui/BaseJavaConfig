@@ -1,4 +1,4 @@
-package base.toy.mapper;
+package com.base.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;

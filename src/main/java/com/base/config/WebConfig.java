@@ -1,4 +1,4 @@
-package base.toy.config;
+package com.base.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 

@@ -1,4 +1,4 @@
-package base.toy.vo;
+package com.base.vo;
 
 import org.springframework.stereotype.Component;
 

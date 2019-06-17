@@ -1,4 +1,4 @@
-package base.toy.config;
+package com.base.config;
 
 import javax.sql.DataSource;
 

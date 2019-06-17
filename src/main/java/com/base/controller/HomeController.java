@@ -1,4 +1,4 @@
-package base.toy.controller;
+package com.base.controller;
 
 import java.text.DateFormat;
 import java.util.Date;

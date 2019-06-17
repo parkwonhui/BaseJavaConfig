@@ -14,8 +14,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import base.toy.config.RootConfig;
-import base.toy.mapper.TestMapper;
+import com.base.config.RootConfig;
+import com.base.mapper.TestMapper;
+
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 

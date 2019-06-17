@@ -1,4 +1,4 @@
-package base.toy.vo;
+package com.base.vo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
