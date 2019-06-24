@@ -8,6 +8,7 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
@@ -39,5 +40,14 @@ public class ServletConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry)  {
           InterceptorRegistration interceptor =  registry.addInterceptor(loginLogInterceptor());
           interceptor.addPathPatterns("/**");
+          registry.addInterceptor(localeChangeInterceptor());  // 인터셉터 등록
+    }
+    
+    // 언어 변경을 위한 인터셉터 생성
+    @Bean
+    public LocaleChangeInterceptor localeChangeInterceptor() {
+    	LocaleChangeInterceptor interceptor = new LocaleChangeInterceptor();
+    	interceptor.setParamName("lang");
+    	return interceptor;
     }
 }
