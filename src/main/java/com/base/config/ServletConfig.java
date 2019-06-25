@@ -1,5 +1,6 @@
 package com.base.config;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -15,7 +16,8 @@ import org.springframework.web.servlet.view.JstlView;
 import com.base.comm.interceptor.LoginInterceptor;
 
 @EnableWebMvc
-@ComponentScan(basePackages={"com.base.controller"})
+@ComponentScan(basePackages="com.base")
+@MapperScan(basePackages="com.base.mapper")
 public class ServletConfig implements WebMvcConfigurer {
 	@Override
 	public void configureViewResolvers(ViewResolverRegistry registry) {
@@ -36,18 +38,18 @@ public class ServletConfig implements WebMvcConfigurer {
     public LoginInterceptor loginLogInterceptor() {
           return new LoginInterceptor();
     }
-    @Override
-    public void addInterceptors(InterceptorRegistry registry)  {
-          InterceptorRegistration interceptor =  registry.addInterceptor(loginLogInterceptor());
-          interceptor.addPathPatterns("/**");
-          registry.addInterceptor(localeChangeInterceptor());  // 인터셉터 등록
-    }
     
-    // 언어 변경을 위한 인터셉터 생성
     @Bean
     public LocaleChangeInterceptor localeChangeInterceptor() {
     	LocaleChangeInterceptor interceptor = new LocaleChangeInterceptor();
     	interceptor.setParamName("lang");
     	return interceptor;
+    }
+    
+    @Override
+    public void addInterceptors(InterceptorRegistry registry)  {
+          InterceptorRegistration interceptor =  registry.addInterceptor(loginLogInterceptor());
+          interceptor.addPathPatterns("/**");
+          registry.addInterceptor(localeChangeInterceptor());  // 인터셉터 등록
     }
 }
