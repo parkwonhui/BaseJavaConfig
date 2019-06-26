@@ -1,4 +1,4 @@
-package com.base.mapper;
+package com.base.server.project.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;

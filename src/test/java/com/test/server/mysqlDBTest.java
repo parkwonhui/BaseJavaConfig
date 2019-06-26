@@ -1,4 +1,4 @@
-package base.toy.project;
+package com.test.server;
 
 import static org.junit.Assert.fail;
 
@@ -9,7 +9,7 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.base.controller.HomeController;
+import com.base.server.project.controller.HomeController;
 
 import lombok.extern.log4j.Log4j;
 

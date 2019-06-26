@@ -1,4 +1,4 @@
-package base.toy.project;
+package com.test.server;
 
 import static org.junit.Assert.*;
 
@@ -16,9 +16,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.base.config.RootConfig;
-import com.base.controller.HomeController;
-import com.base.mapper.TestMapper;
+import com.base.server.comm.config.RootConfig;
+import com.base.server.project.controller.HomeController;
+import com.base.server.project.mapper.TestMapper;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;

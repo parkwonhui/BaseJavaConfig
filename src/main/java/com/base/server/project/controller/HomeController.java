@@ -1,4 +1,4 @@
-package com.base.controller;
+package com.base.server.project.controller;
 
 import java.util.Locale;
 
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
-import com.base.controller.service.BaseService;
+import com.base.server.project.service.BaseService;
 
 @Controller
 public class HomeController {

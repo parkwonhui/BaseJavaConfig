@@ -1,4 +1,4 @@
-package com.base.config;
+package com.base.server.comm.config;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
@@ -13,11 +13,11 @@ import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
-import com.base.comm.interceptor.LoginInterceptor;
+import com.base.server.comm.interceptor.LoginInterceptor;
 
 @EnableWebMvc
-@ComponentScan(basePackages="com.base")
-@MapperScan(basePackages="com.base.mapper")
+@ComponentScan(basePackages="com.base.server")
+@MapperScan(basePackages="com.base.server.mapper")
 public class ServletConfig implements WebMvcConfigurer {
 	@Override
 	public void configureViewResolvers(ViewResolverRegistry registry) {

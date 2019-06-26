@@ -1,4 +1,4 @@
-package com.base.vo;
+package com.base.server.project.vo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
