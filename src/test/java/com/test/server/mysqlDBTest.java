@@ -11,11 +11,7 @@ import org.slf4j.LoggerFactory;
 
 import com.base.server.project.controller.HomeController;
 
-import lombok.extern.log4j.Log4j;
-
 public class mysqlDBTest {
-
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
 	@Test
 	public void testConnection() throws ClassNotFoundException {	

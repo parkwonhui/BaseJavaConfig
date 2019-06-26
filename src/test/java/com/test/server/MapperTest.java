@@ -1,13 +1,5 @@
 package com.test.server;
 
-import static org.junit.Assert.*;
-
-import java.sql.Connection;
-
-import javax.sql.DataSource;
-
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -21,7 +13,6 @@ import com.base.server.project.controller.HomeController;
 import com.base.server.project.mapper.TestMapper;
 
 import lombok.Setter;
-import lombok.extern.log4j.Log4j;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { RootConfig.class })

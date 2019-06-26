@@ -1,14 +1,9 @@
 package com.base.server.comm.util;
 
 import java.io.Reader;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Properties;
 
-import javax.annotation.Resource;
-
 import org.apache.ibatis.io.Resources;
-import org.springframework.core.io.ClassPathResource;
 
 public class PropertiesSearch {
 	private Properties properties;
