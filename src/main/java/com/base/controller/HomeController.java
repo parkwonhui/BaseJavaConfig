@@ -38,7 +38,7 @@ public class HomeController {
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String home(Locale locale, HttpServletRequest request,  HttpServletResponse response, Model model) {		
 		
-		System.out.println("한글:" + messageSource.getMessage("title", null, "no surch", Locale.KOREA));	
+		logger.info("한글:" + messageSource.getMessage("title", null, "no surch", Locale.KOREA));
 		
 		locale = new Locale("ss");
 		sessionLocaleResolver.setLocale(request, response, locale);
