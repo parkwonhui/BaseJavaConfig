@@ -16,7 +16,7 @@ public class PropertiesSearch {
 		try {
 			StringBuilder propertiesName = new StringBuilder();
 			propertiesName.append(propertiesFileName);
-			propertiesName.append(" ");
+			propertiesName.append("_");
 			propertiesName.append(key);
 			propertiesName.append(".properties");
 
