@@ -1,28 +1,30 @@
-package com.base.config;
+package com.base.server.comm.config;
 
 import javax.sql.DataSource;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+
+import com.base.server.comm.util.PropertiesSearch;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
+
 @Configuration
-@ComponentScan(basePackages= {"base.toy.vo"})
-@MapperScan(basePackages= {"base.toy.mapper"})
+@ComponentScan(basePackages="com.base.server")
 public class RootConfig {
 	
 	@Bean
 	public DataSource dataSource(){
+		PropertiesSearch prop = new PropertiesSearch("properties/mariadb/mariadb", "local");
 		HikariConfig hikariConfig = new HikariConfig();
-		hikariConfig.setDriverClassName("org.mariadb.jdbc.Driver");
-		hikariConfig.setJdbcUrl("jdbc:mariadb://localhost:3310/test");
-		hikariConfig.setUsername("test");
-		hikariConfig.setPassword("1234");
+		hikariConfig.setDriverClassName(prop.getProperties("mariadb.driver"));
+		hikariConfig.setJdbcUrl(prop.getProperties("mariadb.url"));
+		hikariConfig.setUsername(prop.getProperties("mariadb.username"));
+		hikariConfig.setPassword(prop.getProperties("mariadb.password"));
 		
 		HikariDataSource dataSource = new HikariDataSource(hikariConfig);
 		
