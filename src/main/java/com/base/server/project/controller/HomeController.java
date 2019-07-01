@@ -36,7 +36,7 @@ public class HomeController {
 
 
 	@RequestMapping(value = "", method = RequestMethod.GET)
-	public String home(Locale locale, HttpServletRequest request,  HttpServletResponse response, Model model) {		
+	public String home(Locale locale, HttpServletRequest request,  HttpServletResponse response, Model model) throws Exception {		
 		
 		logger.info("한글:" + messageSource.getMessage("title", null, "no surch", Locale.KOREA));
 		
@@ -44,6 +44,9 @@ public class HomeController {
 		sessionLocaleResolver.setLocale(request, response, locale);
 		
 		model.addAttribute("sessionLocale", sessionLocaleResolver.resolveLocale(request));
+		
+		// throw를 발생시켜서 CommonExceptionAdvice class의 except함수 호출
+		//throw new Exception("에러");
 	    		
 		return "home";
 	}
