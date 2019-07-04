@@ -1,5 +1,7 @@
 package com.base.server.project.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,6 +14,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
@@ -49,6 +53,12 @@ public class HomeController {
 		//throw new Exception("에러");
 	    		
 		return "home";
+	}
+	
+	@RequestMapping(value = "/sendListTest", method = RequestMethod.POST)
+	public void test(/*ArrayList<Integer> list*/@ModelAttribute String list) throws Exception {
+		System.out.println("들어왔다!!!!!");
+		System.out.println(list);
 	}
 	
 }
