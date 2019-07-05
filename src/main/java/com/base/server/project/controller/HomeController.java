@@ -1,5 +1,6 @@
 package com.base.server.project.controller;
 
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -56,9 +57,9 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/sendListTest", method = RequestMethod.POST)
-	public void test(/*ArrayList<Integer> list*/@ModelAttribute String list) throws Exception {
-		System.out.println("들어왔다!!!!!");
-		System.out.println(list);
+	public void test(/*ArrayList<Integer> list*/@RequestBody String data) throws Exception {
+		System.out.println(URLDecoder.decode(data, "UTF-8"));
+		System.out.println(data);
 	}
 	
 }

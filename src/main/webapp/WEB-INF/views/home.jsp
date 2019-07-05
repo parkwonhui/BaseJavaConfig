@@ -12,14 +12,12 @@
 			console.log('시작');
 			
 			$("#btn1").click(function(){
-				//var list = [{id:1},{id:2},{id:3},{id:4},{id:5}];
-				//var list = [1,2,3];
-				var list = "왜 못받을까요?";
+			
 				$.ajax({
-					url: "/sendListTest",
+					url: "/sendListTest/",
 					type: "POST",
 					dataType : 'json',
-					data: list,
+					data: {"data":"text!!하이루!!!"},
 					success: function(data) {
 						console.log('send 완료!');
 					},

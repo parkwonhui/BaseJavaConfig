@@ -20,8 +20,6 @@ public class RootConfig {
 
 	@Bean
 	public DataSource dataSource() {
-		System.out.println("****************************");
-		System.out.println(username);
 		PropertiesSearch prop = new PropertiesSearch("properties/mariadb/mariadb", "local");
 		HikariConfig hikariConfig = new HikariConfig();
 		hikariConfig.setDriverClassName(prop.getProperties("mariadb.driver"));
