@@ -10,7 +10,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.base.server.comm.config.RootConfig;
 import com.base.server.project.controller.HomeController;
-import com.base.server.project.mapper.TestMapper;
+import com.base.server.project.mapper.BaseMapper;
 
 import lombok.Setter;
 
@@ -19,7 +19,7 @@ import lombok.Setter;
 public class MapperTest {
 
 	@Setter(onMethod_ = { @Autowired })
-	private TestMapper testMapper;
+	private BaseMapper testMapper;
 
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
@@ -27,6 +27,6 @@ public class MapperTest {
 	public void testMyBatis() {
 
 		logger.info(testMapper.getClass().getName());
-		logger.info(testMapper.select());
+		//logger.info(testMapper.select());
 	}
 }

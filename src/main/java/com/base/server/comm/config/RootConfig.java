@@ -2,6 +2,9 @@ package com.base.server.comm.config;
 
 import javax.sql.DataSource;
 
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -13,6 +16,7 @@ import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
 @ComponentScan(basePackages = "com.base.server")
+@MapperScan(basePackages= "com.base.server.project.mapper")
 public class RootConfig {
 
 	@Value("${mariadb.username}")
@@ -20,8 +24,7 @@ public class RootConfig {
 
 	@Bean
 	public DataSource dataSource() {
-		System.out.println("****************************");
-		System.out.println(username);
+		
 		PropertiesSearch prop = new PropertiesSearch("properties/mariadb/mariadb", "local");
 		HikariConfig hikariConfig = new HikariConfig();
 		hikariConfig.setDriverClassName(prop.getProperties("mariadb.driver"));
@@ -34,13 +37,11 @@ public class RootConfig {
 		return dataSource;
 	}
 
-//	@Bean
-//	public SqlSessionFactory sqlSessionFactory() throws Exception {
-//		SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
-//		sqlSessionFactory.setDataSource(dataSource());
-//
-//		return (SqlSessionFactory) sqlSessionFactory.getObject();
-//
-//	}
+	@Bean
+	public SqlSessionFactory sqlSessionFactory() throws Exception {
+		SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
+		sqlSessionFactory.setDataSource(dataSource());
 
+		return (SqlSessionFactory) sqlSessionFactory.getObject();
+	}
 }

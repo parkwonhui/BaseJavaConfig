@@ -17,7 +17,6 @@ import com.base.server.comm.interceptor.LoginInterceptor;
 
 @EnableWebMvc
 @ComponentScan(basePackages="com.base.server")
-@MapperScan(basePackages="com.base.server.mapper")
 public class ServletConfig implements WebMvcConfigurer {
 	@Override
 	public void configureViewResolvers(ViewResolverRegistry registry) {

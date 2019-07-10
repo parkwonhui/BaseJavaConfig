@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.base.server.project.mapper.BaseMapper">
+<!-- 	test 테이블의 index 컬럼에 1,2,3,4,5 값이 차례대로 있음  -->
+	<select id="selectIndex" resultType="Integer">
+		select * from test;
+	</select>
+</mapper>

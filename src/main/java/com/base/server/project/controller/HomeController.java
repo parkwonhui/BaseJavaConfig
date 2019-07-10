@@ -45,6 +45,8 @@ public class HomeController {
 		
 		model.addAttribute("sessionLocale", sessionLocaleResolver.resolveLocale(request));
 		
+		service.test();
+		
 		// throw를 발생시켜서 CommonExceptionAdvice class의 except함수 호출
 		//throw new Exception("에러");
 	    		
